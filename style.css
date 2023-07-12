@@ -133,6 +133,12 @@ ul li a:hover {
   z-index: 1;
   top: 50%;
   left: 0;
+
+  animation: slide-out 0.4s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--padding-list-hover);
 }
 
 #switch span {
@@ -146,7 +152,23 @@ ul li a:hover {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
-  transition: right 0.5s;
+  animation: slide-in 0.4s forwards;
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
